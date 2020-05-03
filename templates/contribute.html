@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4"> Contribute Words</legend>
+
+                <div class="form-group" >
+                    <p style="font-size:11px"><i>Separate words by commas. Please submit vanilla and adult codenames words separately. </i><br/></p>
+                    {{ form.word.label(class="form-control-label") }}<br/>
+                    {{ form.word(class="form-controll form-controll-lg", cols="60", rows="10") }}<br/>
+                    {{ form.password.label(class="form-control-label") }}
+                    {{ form.password(class="form-controll form-controll-lg") }}
+                </div>
+                <div class="form-check">
+                    <div class='row'>
+                        <div class='col-lg-2'>
+                            {{ form.adult(class="form-check-input") }}
+                            {{ form.adult.label(class="form-check-label") }}
+                        </div>
+                        <div class='col-lg-2 pull-left'>
+                            {{ form.submit(class="btn btn-outline-info") }}
+                        </div>
+                    </div>
+                    <!-- {{ form.recaptcha }} -->
+                </div>
+            </fieldset>
+        </form>
+{% endblock content %}

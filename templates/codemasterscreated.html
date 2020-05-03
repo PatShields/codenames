@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="container">
+        <div class="row vertical-align">
+            <div class="col-lg-8">
+                <img src="/word_board.png" alt="Word Board" width="100%">
+            </div>
+            <div class="col-lg-4">
+                <img src="static/images/master.png" alt="Codemaster Board" width="100%">
+            </div>
+        </div>
+    </div>
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ coverform.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4"> Cover Selected Card</legend>
+                <div class="form-group">
+                    {{ coverform.row.label(class="form-control-label") }}
+                    {{ coverform.row(class="form-controll form-controll-lg") }}
+                    {{ coverform.col.label(class="form-control-label") }}
+                    {{ coverform.col(class="form-controll form-controll-lg") }}
+                    {{ coverform.color.label(class="form-control-label") }}
+                    {{ coverform.color(class="form-controll form-controll-lg") }}
+                    {{ coverform.submit_cover(class="btn btn-outline-info") }}
+                </div>
+            </fieldset>
+        </form>
+        <form method="POST" action="">
+            {{ undoform.hidden_tag() }}
+            <fieldset class="form-group">
+                <div class='form-group'>
+                    {{ undoform.submit_undo(class="btn btn-outline-info") }}
+                </div>
+            </fieldset>
+    </div>
+    <p><center><a href="/playing_board">Click here to generate another board</a></center></p><br/>
+{% endblock content %}
+

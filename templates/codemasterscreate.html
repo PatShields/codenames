@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section w-50">
+        <legend class="border-bottom mb-4"> Create or View Boards for Codemasters</legend>
+        <div class="row">
+            <div class='col-lg-12'>
+                <form method="POST" action="">
+                    {{ currentform.hidden_tag() }}
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            {{ currentform.board_number.label(class="form-control-label") }}
+                            {{ currentform.board_number(class="") }}
+                            {{ currentform.submit_num(class="btn btn-outline-info") }}<br/>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-lg-.5'>
+            </div>
+            <div class='col-lg-1.5'>
+                <form method="POST" action="">
+                    {{ dirtyform.hidden_tag() }}
+                    {{ cleanform.hidden_tag() }}
+                    <div class='form-group'>
+                        {% if adult %}
+                            {{ cleanform.submit_clean(class="btn btn-outline-info") }}
+                        {% else %}
+                            {{ dirtyform.submit_dirty(class="btn btn-outline-info") }}
+                        {% endif %}
+                    </div>
+                </form>
+            </div>
+            <div class='col-lg-5'>
+                <form method="POST" action="" onSubmit="return confirm('This will clear all current game data. Are you sure you wish to proceed?');">
+                    {{ newform.hidden_tag() }}
+                    <div class="form-group">
+                        {{ newform.submit_new(class="btn btn-outline-info") }}<br/>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class='row row-centered"'>
+
+        </div>
+    </div>
+{% endblock content %}
+

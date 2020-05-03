@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class='row'>
+    <div class='col-lg-8'>
+    <div class='content-section'>
+            <legend class="border-bottom mb-4"> Playing Codenames</legend>
+        <h5> Code Masters </h5>
+        <ol>
+            <li> Go to the Codemasters page. Regular and Adult Codenames words can be toggled using the Clean It Up / Get Dirty button. </li>
+            <li> One codemaster begins a game by clicking Start New Game and shares the board number with the other.</li>
+            <li> The other codemaster joins by typing in the board number and clicking View Existing Boards.</li>
+            <li> Guessed words can be coverd using the drop down menus. Reminder that rows and horizontal and columns are vertical. The top row is row 1 and the leftmost column is column 1.</li>
+            <li> Use the undo button in case of mistakes in covering cards. </li>
+        </ol>
+        <h5> Everyone Else </h5>
+        <ol>
+            <li> Go to the Guessers page to see the Codenames words. </li>
+            <li> When a codemaster covers a word to indicate its true team, refresh your browser to see the changes. </li>
+        </ol>
+    </div>
+    </div>
+    <div class=col-lg-4>
+        <div class='container'>
+            <img src='static/images/cage/{{cage}}' alt='{{cage}}' class='img-fluid'>
+        </div>
+    </div>
+</div>
+{% endblock content %}
